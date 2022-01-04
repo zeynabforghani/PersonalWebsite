@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@300;500;700&family=Roboto:wght@100&display=swap');
+
+body {
+    font-family: 'Maven Pro', sans-serif;
+    padding-top: 1rem;
+    margin: 0px;
+
+}
+
+.container {
+    display: grid;
+    grid-template-columns: minmax(125px, 425px) minmax(400px, 425px) minmax(300px, 425px);
+    grid-template-rows: auto auto auto 30px 30px;
+    grid-template-areas: "brand navbar colormode"
+        "about about image"
+        "projects projects projects"
+        "resume resume resume"
+        "contact contact contact"
+
+}
+
+.navbar-brand {
+    grid-area: brand;
+    text-align: left;
+    font-size: 1.25rem;
+
+}
+
+.fa-user {
+    font-size: 2.5rem;
+    padding-right: 10px;
+}
+
+.container--navber__list {
+    display: inline-block;
+}
+
+.container--navbar {
+    grid-area: navbar;
+}
+
+.container--navber__list {
+    padding-right: 2rem;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.container--colormode {
+    grid-area: colormode;
+    font-size: 1rem;
+    display: grid;
+    justify-content: right;
+    align-content: center;
+
+}
+
+
+.fa-moon {
+    padding-right: 0.2rem;
+    font-size: 1.5rem;
+}
+
+.toggle-button__mobile {
+    display: none;
+}
+
+.container--abouttext {
+    grid-area: about;
+    padding-top: 10rem;
+    padding-left: 2rem;
+}
+
+.container--aboutimage {
+    grid-area: image;
+    padding-top: 10rem;
+
+}
+
+.container--aboutimage__img {
+    max-width: 100%;
+}
+
+.container--abouttext__welcome {
+    color: #5b5b5b;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 50px;
+    letter-spacing: 0.2px;
+}
+
+.container--abouttext__introduce {
+    color: #212121;
+    font-size: 2.6rem;
+    margin: 30px 0;
+}
+
+.container--abouttext__details {
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #5b5b5b;
+    font-family: Maven Pro;
+}
+
+.container--abouttext__button {
+    margin: 2rem 0rem 3rem;
+}
+
+.container--abouttext__button a {
+    text-align: center;
+    background: #eee;
+    color: #5b5b5b;
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 13px 29px;
+    font-size: 1rem;
+    text-decoration: none;
+    border: 1px solid transparent;
+}
+
+@media (min-width: 560px) and (max-width: 960px) {
+    .container {
+        display: grid;
+        grid-template-columns: minmax(125px, 500px) minmax(400px, 500px);
+        grid-template-rows: auto auto auto 30px 30px;
+        grid-template-areas: "brand navbar "
+            "about about"
+            "image image "
+            "resume resume "
+            "contact contact "
+
+    }
+
+    .container--colormode {
+        display: none;
+    }
+
+    .container--abouttext {
+        grid-area: about;
+        padding-top: 6rem;
+    }
+
+    .container--aboutimage {
+        grid-area: image;
+        padding-top: 1rem;
+
+    }
+
+}
+
+@media (max-width:560px) {
+
+    .container {
+
+        grid-template-columns: repeat(2, auto);
+        grid-template-areas: "brand menu"
+            "about about"
+            "image image "
+    }
+
+    .toggle-button__mobile {
+        grid-area: menu;
+        display: grid;
+        justify-content: end;
+        align-items: end;
+    }
+
+    .container--colormode {
+        display: none;
+    }
+
+
+
+    .container--navbar {
+        display: none;
+    }
+
+    .fa-bars {
+        font-size: 2rem;
+    }
+
+
+    .container--abouttext {
+        grid-area: about;
+        padding-top: 6rem;
+        padding-left: 0.5rem;
+    }
+
+    .container--aboutimage {
+        grid-area: image;
+        padding-top: 1rem;
+        text-align: center;
+
+    }
+
+    .container--abouttext__welcome {
+        padding: 0px;
+    }
+
+    .container--abouttext__button a {
+        padding: 13px 10px;
+    }
+
+    .container--abouttext__details {
+        font-size: 1rem;
+    }
+
+    .container--abouttext__introduce {
+        font-size: 2rem;
+    }
+}
