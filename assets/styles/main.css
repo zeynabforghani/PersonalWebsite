@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Maven Pro', sans-serif;
-    padding-top: 1rem;
+    padding: 1rem 2rem;
     margin: 0px;
 
 }
@@ -118,7 +118,60 @@ body {
     border: 1px solid transparent;
 }
 
+.projects {
+    grid-area: projects;
+    padding-top: 5rem;
+}
+
+.projects--text {
+    color: #353535;
+    text-align: center;
+    font-family: 'Maven Pro';
+    font-weight: bold;
+    font-size: 2rem;
+
+
+}
+
+.projects--image__img {
+    max-width: 100%;
+}
+
+.projects--dot {
+    text-align: center;
+}
+
+.projects--dot__btn {
+    outline: none;
+    border: none;
+    display: inline-block;
+    background: none;
+    cursor: pointer;
+
+
+}
+
+.projects--dot__span {
+    background: #5b5b5b;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin: -20px 5px;
+    border-radius: 30px;
+    display: block;
+}
+
+
+
+.projects--dot__span:hover {
+    background: #869791;
+}
+
 @media (min-width: 560px) and (max-width: 960px) {
+    body {
+        padding: 1rem 0rem 0rem 0.5rem;
+    }
+
+
     .container {
         display: grid;
         grid-template-columns: minmax(125px, 500px) minmax(400px, 500px);
@@ -126,6 +179,7 @@ body {
         grid-template-areas: "brand navbar "
             "about about"
             "image image "
+            "projects projects"
             "resume resume "
             "contact contact "
 
@@ -150,12 +204,18 @@ body {
 
 @media (max-width:560px) {
 
+    body {
+        padding: 1rem 0rem 0rem 0.5rem;
+    }
+
+
     .container {
 
         grid-template-columns: repeat(2, auto);
         grid-template-areas: "brand menu"
             "about about"
-            "image image "
+            "image image"
+            "projects projects"
     }
 
     .toggle-button__mobile {
@@ -207,5 +267,9 @@ body {
 
     .container--abouttext__introduce {
         font-size: 2rem;
+    }
+
+    .projects--text {
+        font-size: 1.5rem;
     }
 }
